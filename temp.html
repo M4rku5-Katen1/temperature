@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature Converter</title>
+    <style type="text/css">
+        html{background-color: rgba(47, 96, 178, 0.99);
+            text-align: center;
+            color: #5cd839;
+            font-family: AppleMyungjo;}
+    </style>
+    <script type="text/javascript">
+
+        function calculateC() {
+            var fah = parseFloat(document.getElementById('f').value);
+            var cel = (fah - 32) * (5/9); //formula for celsius conversion
+            document.getElementById('c').value = cel;
+        }
+            function calculateF() {
+                var cel = parseFloat(document.getElementById('c').value);
+                var fah = (cel * 9/5) + 32; //formula for fahrenheit conversion
+                document.getElementById('f').value = fah;
+                }
+    </script>
+</head>
+<body>
+<h1>Temperature Converter</h1>
+<h3>This web page will allow you to you calculate a rounded temperature in either Celsius or Fahrenheit.</h3>
+<h5>Enter a temperature (either celsius or fahrenheit) rounded to a whole number in the corresponding text boxes.</h5>
+<p>
+    <label for="c">Celsius to Fahrenheit:</label>
+    <input id="c"
+           type="number"
+           placeholder="Enter celsius here">
+    <button value="calculate" onclick = "calculateF();return false">Convert to Fahrenheit!</button><br>
+<p><label for="f">Fahrenheit to Celsius:</label>
+    <input id="f"
+           type="number"
+           placeholder="Enter fahrenheit here">
+    <button value="calculate" onclick = "calculateC();return false">Convert to Celsius!</button>
+</p><img src="Images/themometer.png" width="200" height="200"/>
+</body>
+</html>
